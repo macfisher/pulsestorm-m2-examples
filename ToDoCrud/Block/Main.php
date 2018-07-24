@@ -3,8 +3,8 @@
 namespace Pulsestorm\ToDoCrud\Block;
 
 use \Magento\Framework\View\Element\Template;
-use Magento\Framework\View\Element\Template\Context;
-use Pulsestorm\ToDoCrud\Model\TodoItemFactory;
+use \Magento\Framework\View\Element\Template\Context;
+use \Pulsestorm\ToDoCrud\Model\TodoItemFactory;
 
 class Main extends Template {
 	protected $toDoFactory;
