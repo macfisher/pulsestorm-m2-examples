@@ -1,6 +1,6 @@
 <?php
-namespace Pulsestorm\TutorialObjectManager1\Command;
 
+namespace Pulsestorm\TutorialObjectManager1\Command;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -15,6 +15,17 @@ class Testbed extends AbstractCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln("You did it!");
+        $manager = $this->getObjectManager();
+        $object = $manager->get(
+            'Pulsestorm\TutorialObjectManager1\Model\Example');
+
+        $object->message = 'Hello PHP!';
+        $output->writeln($object->getHelloMessage());
+
+        $object = $manager->get(
+            'Pulsestorm\TutorialObjectManager1\Model\Example');
+
+        // 'get' method uses Magento 2 automatic singleton
+        $output->writeln($object->getHelloMessage());
     }
 }
