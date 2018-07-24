@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<page
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	layout="1column"
+	xsi:noNamespaceSchemaLocation=
+		"urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+	<head>
+		<css src='Pulsestorm_JavascriptCssExample::test.css'/>
+		<link src='Pulsestorm_JavascriptCssExample::test.js'/>
+	</head>
+
+	<referenceBlock name='head.additional'>
+		<block
+			template='head.phtml'
+			class='Pulsestorm\JavascriptCssExample\Block\Head'
+			name='pulsestorm_javascriptcssexample_block_head'/>
+	</referenceBlock>
+
+	<referenceContainer name="content">
+		<block
+			template="content.phtml"
+			class="Pulsestorm\JavascriptCssExample\Block\Main"
+			name="pulsestorm_javascriptcssexample_block_main"/>
+	</referenceContainer>
+</page>
