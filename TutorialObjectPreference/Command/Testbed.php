@@ -13,7 +13,8 @@ class Testbed extends Command
     protected $object_manager;
     protected $messenger;
     
-    public function __construct(Messenger $messenger, ObjectManagerInterface $om)
+    public function __construct(Messenger $messenger,
+        ObjectManagerInterface $om)
     {
         $this->object_manager = $om;
         $this->messenger      = $messenger;
@@ -21,17 +22,17 @@ class Testbed extends Command
         return parent::__construct();
     }
     
-    protected function configure()
-    {
+    protected function configure() {
         $this->setName("ps:tutorial-object-preference");
-        $this->setDescription("A command the programmer was too lazy to enter a description for.");
+        $this->setDescription(
+            "A command the programmer was too lazy to enter a description for."
+        );
+
         parent::configure();
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(
-            $this->messenger->getMessage()
-        );  
+        $output->writeln($this->messenger->getMessage());  
     }
-} 
+}
